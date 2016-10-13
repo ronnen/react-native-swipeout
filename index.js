@@ -150,7 +150,7 @@ const Swipeout = React.createClass({
     if (nextProps.close) this._close();
   },
 
-  _handlePanResponderGrant: function(e: Object, gestureState: Object) {
+  _handlePanResponderGrant: function(e, gestureState) {
     if(this.props.onOpen){
       this.props.onOpen(this.props.sectionID, this.props.rowID);
     }
@@ -165,7 +165,7 @@ const Swipeout = React.createClass({
     });
   },
 
-  _handlePanResponderMove: function(e: Object, gestureState: Object) {
+  _handlePanResponderMove: function(e, gestureState) {
     var posX = gestureState.dx;
     var posY = gestureState.dy;
     var leftWidth = this.state.btnsLeftWidth;
@@ -186,7 +186,7 @@ const Swipeout = React.createClass({
     }
   },
 
-  _handlePanResponderEnd: function(e: Object, gestureState: Object) {
+  _handlePanResponderEnd: function(e, gestureState) {
     var posX = gestureState.dx;
     var contentPos = this.state.contentPos;
     var contentWidth = this.state.contentWidth;
